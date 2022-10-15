@@ -20,7 +20,7 @@ const NavbarRoot = styled(BazaarCard)(({ isfixed, theme, sidebarstyle }) => ({
   ...(sidebarstyle === "style2" && {
     height: "auto",
     paddingBottom: 10,
-    backgroundColor: theme.palette.primary[50],
+    backgroundColor: '#97BFD430',
   }),
 }));
 const StyledList = styled(FlexBox)(({ theme }) => ({
@@ -71,7 +71,7 @@ const SideNavbar = (props) => {
 
   const renderChild = (childList) => {
     return childList.map((item, ind) => (
-      <NavLink key={ind} href={item.href} color="grey.700">
+      <NavLink key={ind} href={item.href} color="red">
         <StyledList>
           <Circle className="listCircle" />
           <Span py={0.75} flex="1 1 0">
@@ -104,7 +104,7 @@ const SideNavbar = (props) => {
               {item.categoryItem.map((item, ind) => {
                 const Icon = appIcons[item.icon];
                 return (
-                  <Box mb="2px" color="grey.700" key={ind}>
+                  <Box mb="2px" color="#2B3445" key={ind}>
                     {item.child ? (
                       <Accordion>
                         <AccordionHeader

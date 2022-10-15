@@ -7,7 +7,7 @@ import React from "react"; // styled components
 const StyledBox = styled(Box)(({ theme }) => ({
   marginBottom: 60,
   overflow: "hidden",
-  backgroundColor: theme.palette.primary[100],
+  backgroundColor: '#F6F2ED',
   "& .carousel-dot": {
     left: 0,
     right: 0,
@@ -85,11 +85,10 @@ const GiftShopSection1 = () => {
           <StyledGrid container key={ind}>
             <GridItemOne item md={6} sm={6} xs={12}>
               <Box py={6}>
-                <Paragraph color="primary.main">GIFT SHOP</Paragraph>
+                <Paragraph color="primary.main">LAMP SHOP -----</Paragraph>
                 <Box className="titleBox">
-                  <H1>The gift of a man</H1>
-                  <H1>is his goodwill.</H1>
-                  <H1>Take care of gift</H1>
+                  <H1>Let’s Bring Light</H1>
+                  <H1>to Home</H1>
                 </Box>
 
                 <StyledButton

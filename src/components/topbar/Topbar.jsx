@@ -4,7 +4,6 @@ import TouchRipple from "@mui/material/ButtonBase";
 import Image from "components/BazaarImage";
 import BazaarMenu from "components/BazaarMenu";
 import { FlexBox } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
 import { Span } from "components/Typography";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -14,7 +13,7 @@ const TopbarWrapper = styled(Box, {
 })(({ theme, bgColor }) => ({
   fontSize: 12,
   height: layoutConstant.topbarHeight,
-  background: bgColor || theme.palette.secondary.main,
+  background: '#BE7374' || theme.palette.secondary.main,
   color: theme.palette.secondary.contrastText,
   "& .topbarLeft": {
     "& .logo": {
@@ -100,27 +99,25 @@ const Topbar = ({ bgColor }) => {
 
           <FlexBox alignItems="center">
             <CallOutlined fontSize="small" />
-            <Span className="title">+88012 3456 7894</Span>
+            <Span className="title">+000 0000 0000</Span>
           </FlexBox>
 
           <FlexBox alignItems="center" ml={2.5}>
             <MailOutline fontSize="small" />
-            <Span className="title">support@ui-lib.com</Span>
+            <Span className="title">info@lampinbox.com</Span>
           </FlexBox>
         </FlexBox>
 
         <FlexBox className="topbarRight" alignItems="center">
-          <NavLink className="link" href="/faq">
-            Theme FAQ&quot;s
-          </NavLink>
-
-          <NavLink className="link" href="/help">
-            Need Help?
-          </NavLink>
-
           <BazaarMenu
             handler={
               <TouchRipple className="handler marginRight">
+                <Image
+                    display="block"
+                    height="15px"
+                    width="20px"
+                    src={language.imgUrl}
+                />
                 <Span className="menuTitle">{language.title}</Span>
                 <ExpandMore fontSize="inherit" />
               </TouchRipple>
@@ -141,6 +138,12 @@ const Topbar = ({ bgColor }) => {
             direction="right"
             handler={
               <TouchRipple className="handler">
+                <Image
+                    display="block"
+                    height="15px"
+                    width="20px"
+                    src={currency.imgUrl}
+                />
                 <Span className="menuTitle">{currency.title}</Span>
                 <ExpandMore fontSize="inherit" />
               </TouchRipple>

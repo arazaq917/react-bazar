@@ -11,7 +11,7 @@ const boxStyle = {
 };
 const LeftContentBox = styled(Card)(({ theme }) => ({
   ...boxStyle,
-  background: theme.palette.primary[100],
+  background: '#97BFD430',
   backgroundImage: "url('/assets/images/Gift Shop/Offer Card.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "contain",
@@ -22,7 +22,7 @@ const LeftContentBox = styled(Card)(({ theme }) => ({
 }));
 const RightContentBox = styled(Card)(({ theme }) => ({
   ...boxStyle,
-  background: theme.palette.primary[100],
+  background: '#BE737420',
   backgroundImage: "url('/assets/images/Gift Shop/Offer 1.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "contain",

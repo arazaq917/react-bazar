@@ -14,10 +14,10 @@ export const grey = {
   300: "#E3E9EF",
   200: "#F3F5F9",
   // Line Stroke
-  100: "#F6F9FC",
+  100: "#fff",
 };
 export const primary = {
-  100: "#FCE9EC",
+  100: "#F9F6F2",
   200: "#F8C7CF",
   300: "#F07D90",
   400: "#EC6178",
