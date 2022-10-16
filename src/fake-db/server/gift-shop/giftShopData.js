@@ -100,7 +100,7 @@ export const topCategories = [
 export const popularProducts = [
   {
     price: 162,
-    title: "Birthday Gift For Girl",
+    title: "Modern Grayscale Tripod...",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI1.png",
@@ -109,7 +109,7 @@ export const popularProducts = [
   },
   {
     price: 98,
-    title: "Gift For Boy",
+    title: "Rose Bloom Tripod Lamp...",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI2.png",
@@ -118,7 +118,7 @@ export const popularProducts = [
   },
   {
     price: 85,
-    title: "Baby Toy Gift",
+    title: "Sunflower Table Lamp...",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI3.png",
@@ -127,7 +127,7 @@ export const popularProducts = [
   },
   {
     price: 218,
-    title: "Baby Doll Gift",
+    title: "Tripod Lamp, Psychedelic...",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI4.png",
@@ -136,7 +136,7 @@ export const popularProducts = [
   },
   {
     price: 142,
-    title: "Jewellery Gift",
+    title: "Tripod Lamp",
     rating: 4,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI5.png",
@@ -145,7 +145,7 @@ export const popularProducts = [
   },
   {
     price: 71,
-    title: "Baby Doll Gift",
+    title: "Tripod Lamp",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI2.png",
@@ -156,7 +156,7 @@ export const popularProducts = [
 export const topSailedProducts = [
   {
     price: 219,
-    title: "Gold Wedding Ring",
+    title: "Tripod Lamp",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS1.png",
@@ -165,7 +165,7 @@ export const topSailedProducts = [
   },
   {
     price: 209,
-    title: "Gift For Baby",
+    title: "Tripod Lamp",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS3.png",
@@ -174,7 +174,7 @@ export const topSailedProducts = [
   },
   {
     price: 248,
-    title: "Special Gift For Young",
+    title: "Tripod Lamp",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS2.png",
@@ -183,7 +183,7 @@ export const topSailedProducts = [
   },
   {
     price: 111,
-    title: "Gift For Boy",
+    title: "Tripod Lamp",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS3.png",
@@ -192,7 +192,7 @@ export const topSailedProducts = [
   },
   {
     price: 65,
-    title: "Baby Toy Gift",
+    title: "Tripod Lamp",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS2.png",
@@ -201,7 +201,7 @@ export const topSailedProducts = [
   },
   {
     price: 71,
-    title: "Baby Doll Gift",
+    title: "Tripod Lamp",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS1.png",
@@ -212,7 +212,7 @@ export const topSailedProducts = [
 export const giftShopProducts = [
   {
     price: 219,
-    title: "Gold Wedding Ring",
+    title: "Atomic Pattern Table Lamp, Mid...",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI5.png",
@@ -221,7 +221,7 @@ export const giftShopProducts = [
   },
   {
     price: 209,
-    title: "Gift For Baby",
+    title: "Music Table Lamp, Printed Lamp Shades",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI8.png",
@@ -230,7 +230,7 @@ export const giftShopProducts = [
   },
   {
     price: 248,
-    title: "Special Gift For Young",
+    title: "Lovely Garden Tripod Lamp, Floral...",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampPI9.png",
@@ -239,7 +239,7 @@ export const giftShopProducts = [
   },
   {
     price: 111,
-    title: "Gift For Boy",
+    title: "Atomic Pattern Lamp",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampP11.png",
@@ -248,7 +248,7 @@ export const giftShopProducts = [
   },
   {
     price: 65,
-    title: "Baby Toy Gift",
+    title: "Atomic Pattern Lamp",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampP12.png",
@@ -257,7 +257,7 @@ export const giftShopProducts = [
   },
   {
     price: 71,
-    title: "Baby Doll Gift",
+    title: "Atomic Pattern Lamp",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampP13.png",
@@ -266,7 +266,7 @@ export const giftShopProducts = [
   },
   {
     price: 172,
-    title: "Jewellery Gift",
+    title: "JAtomic Pattern Lamp",
     rating: 4,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lamp1.png",
@@ -275,7 +275,7 @@ export const giftShopProducts = [
   },
   {
     price: 162,
-    title: "Birthday Gift For Girl",
+    title: "Atomic Pattern Lamp",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lamp2.png",
@@ -284,7 +284,7 @@ export const giftShopProducts = [
   },
   {
     price: 98,
-    title: "Gift For Boy",
+    title: "Atomic Pattern Lamp",
     rating: 3,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lamp3.png",
@@ -293,7 +293,7 @@ export const giftShopProducts = [
   },
   {
     price: 85,
-    title: "Baby Toy Gift",
+    title: "Atomic Pattern Lamp",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS1.png",
@@ -302,7 +302,7 @@ export const giftShopProducts = [
   },
   {
     price: 218,
-    title: "Baby Doll Gift",
+    title: "Atomic Pattern Lamp",
     rating: 5,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampTS3.png",
@@ -311,7 +311,7 @@ export const giftShopProducts = [
   },
   {
     price: 142,
-    title: "Jewellery Gift",
+    title: "Atomic Pattern Lamp",
     rating: 4,
     category: "giftshop",
     imgUrl: "/assets/images/Gift Shop/lampP12.png",

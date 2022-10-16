@@ -49,7 +49,7 @@ const GiftShopTopSales = ({ productsData }) => {
             imgUrl={item.imgUrl}
             sx={{
               "& #imgBox": {
-                background: palette.primary[200],
+                background: '#F9F6F2',
               },
             }}
           />

@@ -32,7 +32,7 @@ const StyledCard = styled(Box)(({ theme }) => ({
 const ImgBox = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   position: "relative",
-  padding: "0 40px 20px 40px",
+  padding: "27px 40px 27px 40px",
   background: theme.palette.primary[100],
 }));
 const ItemController = styled(FlexBetween)(({ theme }) => ({
