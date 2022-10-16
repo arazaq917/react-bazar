@@ -12,7 +12,7 @@ const boxStyle = {
 const LeftContentBox = styled(Card)(({ theme }) => ({
   ...boxStyle,
   background: '#97BFD430',
-  backgroundImage: "url('/assets/images/Gift Shop/lampTS2.png')",
+  backgroundImage: "url('/assets/images/Gift Shop/banner 1.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "contain",
   backgroundPosition: "right bottom",
@@ -22,8 +22,8 @@ const LeftContentBox = styled(Card)(({ theme }) => ({
 }));
 const RightContentBox = styled(Card)(({ theme }) => ({
   ...boxStyle,
-  background: '#BE737420',
-  backgroundImage: "url('/assets/images/Gift Shop/lamp1.png')",
+  background: '#BE737430',
+  backgroundImage: "url('/assets/images/Gift Shop/banner 2.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "contain",
   backgroundPosition: "right",

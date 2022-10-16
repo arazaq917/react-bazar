@@ -45,10 +45,12 @@ const Footer = () => {
                 <Paragraph mb={2.5} color="grey.500">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Auctor libero id et, in gravida. Sit diam duis mauris nulla
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Auctor libero id et, in gravida. Sit diam duis mauris nulla
                   cursus. Erat et lectus vel ut sollicitudin elit at amet.
                 </Paragraph>
 
-                <AppStore />
+                {/*<AppStore />*/}
               </Grid>
 
               <Grid item lg={2} md={6} sm={6} xs={12}>
@@ -105,10 +107,10 @@ const Footer = () => {
                   70 Washington Square South, New York, NY 10012, United States
                 </Box>
                 <Box py={0.6} color="grey.500">
-                  Email: uilib.help@gmail.com
+                  Email: info@lampinbox.com
                 </Box>
                 <Box py={0.6} mb={2} color="grey.500">
-                  Phone: +1 1123 456 780
+                  Phone: +000 0000 0000
                 </Box>
 
                 <FlexBox className="flex" mx={-0.625}>
