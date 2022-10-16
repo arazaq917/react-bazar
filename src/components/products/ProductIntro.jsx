@@ -108,10 +108,10 @@ const ProductIntro = ({ product }) => {
         <Grid item md={6} xs={12} alignItems="center">
           <H1 mb={2}>{title}</H1>
 
-          <FlexBox alignItems="center" mb={2}>
-            <Box>Brand:</Box>
-            <H6 ml={1}>Xiaomi</H6>
-          </FlexBox>
+          {/*<FlexBox alignItems="center" mb={2}>*/}
+          {/*  <Box>Brand:</Box>*/}
+          {/*  <H6 ml={1}>Xiaomi</H6>*/}
+          {/*</FlexBox>*/}
 
           <FlexBox alignItems="center" mb={2}>
             <Box lineHeight="1">Rated:</Box>
@@ -132,6 +132,18 @@ const ProductIntro = ({ product }) => {
             </H2>
             <Box color="inherit">Stock Available</Box>
           </Box>
+
+            <Box mb = {1} sx={{height: '20px',
+              width: 77,
+              left: 722,
+              top: 584,
+              fontFamily:'Open Sans',
+              fontStyle:'normal',
+              fontWeight:600,
+              fontSize:18,
+              lineHeight:'110%'
+
+            }} color="inherit" >Quantity</Box>
 
           {!cartItem?.qty ? (
             <BazaarButton
@@ -178,14 +190,14 @@ const ProductIntro = ({ product }) => {
             </FlexBox>
           )}
 
-          <FlexBox alignItems="center" mb={2}>
-            <Box>Sold By:</Box>
-            <Link href="/shops/fdfdsa">
-              <a>
-                <H6 ml={1}>Mobile Store</H6>
-              </a>
-            </Link>
-          </FlexBox>
+          {/*<FlexBox alignItems="center" mb={2}>*/}
+          {/*  <Box>Sold By:</Box>*/}
+          {/*  <Link href="/shops/fdfdsa">*/}
+          {/*    <a>*/}
+          {/*      <H6 ml={1}>Mobile Store</H6>*/}
+          {/*    </a>*/}
+          {/*  </Link>*/}
+          {/*</FlexBox>*/}
         </Grid>
       </Grid>
     </Box>

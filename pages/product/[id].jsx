@@ -42,8 +42,8 @@ const ProductDetails = (props) => {
    */
 
   useEffect(() => {
-    getRelatedProducts().then((data) => setRelatedProducts(data));
-    getFrequentlyBought().then((data) => setFrequentlyBought(data));
+    // getRelatedProducts().then((data) => setRelatedProducts(data));
+    // getFrequentlyBought().then((data) => setFrequentlyBought(data));
   }, []);
 
   const handleOptionClick = (_, value) => setSelectedOption(value);
@@ -72,13 +72,13 @@ const ProductDetails = (props) => {
           {selectedOption === 1 && <ProductReview />}
         </Box>
 
-        {frequentlyBought && (
-          <FrequentlyBought productsData={frequentlyBought} />
-        )}
+        {/*{frequentlyBought && (*/}
+        {/*  <FrequentlyBought productsData={frequentlyBought} />*/}
+        {/*)}*/}
 
-        <AvailableShops />
+        {/*<AvailableShops />*/}
 
-        {relatedProducts && <RelatedProducts productsData={relatedProducts} />}
+        {/*{relatedProducts && <RelatedProducts productsData={relatedProducts} />}*/}
       </Container>
     </ShopLayout1>
   );

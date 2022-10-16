@@ -2,17 +2,17 @@
 export default [
   {
     price: 168,
-    title: "Lord 2019",
-    imgUrl: "/assets/images/products/Automotive/1.Ford2019.png",
+    title: "Sunflower Tripod Lamp",
+    imgUrl: "/assets/images/Gift Shop/lampPI9.png",
     category: "automotive",
     unit: "kg",
     discount: 8,
     id: "7222243834583537",
     rating: 2,
     imgGroup: [
-      "/assets/images/products/Automotive/1.Ford2019.png",
-      "/assets/images/products/Automotive/1.Ford2019.png",
-      "/assets/images/products/Automotive/1.Ford2019.png",
+      "/assets/images/Gift Shop/lampPI9.png",
+      "/assets/images/Gift Shop/lampPI9.png",
+      "/assets/images/Gift Shop/lampPI9.png",
     ],
   },
   {
