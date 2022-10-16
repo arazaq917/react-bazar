@@ -97,7 +97,7 @@ const GiftShopSection3 = () => {
                 <H3>$20.00</H3>
                 <StyledButton>Shop Now</StyledButton>
               </Box>
-              <Box className="content" />
+              <Box className = "content" />
             </RightContentBox>
           </a>
         </Link>
