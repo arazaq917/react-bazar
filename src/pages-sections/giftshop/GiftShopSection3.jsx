@@ -12,7 +12,7 @@ const boxStyle = {
 const LeftContentBox = styled(Card)(({ theme }) => ({
   ...boxStyle,
   background: '#97BFD430',
-  backgroundImage: "url('/assets/images/Gift Shop/Offer Card.png')",
+  backgroundImage: "url('/assets/images/Gift Shop/lampTS2.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "contain",
   backgroundPosition: "right bottom",
@@ -23,10 +23,10 @@ const LeftContentBox = styled(Card)(({ theme }) => ({
 const RightContentBox = styled(Card)(({ theme }) => ({
   ...boxStyle,
   background: '#BE737420',
-  backgroundImage: "url('/assets/images/Gift Shop/Offer 1.png')",
+  backgroundImage: "url('/assets/images/Gift Shop/lamp1.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "contain",
-  backgroundPosition: "bottom",
+  backgroundPosition: "right",
   display: "block",
 }));
 const RightContent = styled(Box)(() => ({
@@ -92,7 +92,7 @@ const GiftShopSection3 = () => {
                 p: "20px",
               }}
             >
-              <Box textAlign="center">
+              <Box textAlign="left">
                 <H6>Shop Online Gift Under</H6>
                 <H3>$20.00</H3>
                 <StyledButton>Shop Now</StyledButton>

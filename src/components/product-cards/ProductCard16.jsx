@@ -32,7 +32,7 @@ const StyledCard = styled(Box)(({ theme }) => ({
 const ImgBox = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   position: "relative",
-  padding: "0 40px 20px 40px",
+  padding: "27px 40px 27px 40px",
   background: theme.palette.primary[100],
 }));
 const ItemController = styled(FlexBetween)(({ theme }) => ({
@@ -117,7 +117,7 @@ const ProductCard16 = (props) => {
     <StyledCard sx={sx}>
       <ImgBox id="imgBox">
         {off !== 0 && (
-          <StyledChip color="primary" size="small" label={`${off}% off`} />
+          <StyledChip color="primary" size="small" label={`New`} />
         )}
         <Link href={`/product/${id}`}>
           <a>
@@ -175,11 +175,11 @@ const ProductCard16 = (props) => {
             ${(price - (price * off) / 100).toFixed(2)}
           </Box>
 
-          {off !== 0 && (
-            <Box color="grey.600" fontWeight="500">
-              <del>{price?.toFixed(2)}</del>
-            </Box>
-          )}
+          {/*{off !== 0 && (*/}
+          {/*  <Box color="grey.600" fontWeight="500">*/}
+          {/*    <del>{price?.toFixed(2)}</del>*/}
+          {/*  </Box>*/}
+          {/*)}*/}
         </FlexRowCenter>
 
         <Link href={`/product/${id}`}>
