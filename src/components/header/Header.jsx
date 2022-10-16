@@ -69,7 +69,7 @@ const Header = ({ isFixed, className, searchBoxType = "type1" }) => {
         >
           <Link href="/">
             <a>
-              <Image height={44} src="/assets/images/logo2.svg" alt="logo" />
+              <Image height={33} width={144} left = {120} top={61} src="/assets/images/logo2.svg" alt="logo" />
             </a>
           </Link>
 
