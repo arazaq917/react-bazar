@@ -12,7 +12,7 @@ const MobileCategoryImageBox = ({ title, imgUrl, Icon }) => {
           borderRadius="5px"
           width={100}
           height={100}
-          objectFit="cover"
+          objectFit="contain"
         />
       ) : (
         Icon && <Icon size="48px">{Icon}</Icon>

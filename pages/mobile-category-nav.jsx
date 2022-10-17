@@ -26,33 +26,33 @@ const MobileCategoryNav = () => {
     <MobileCategoryNavStyle>
       <Header className="header" />
 
-      <Box className="main-category-holder">
-        {navigations.map((item) => (
-          <Box
-            key={item.title}
-            className="main-category-box"
-            onClick={handleCategoryClick(item)}
-            borderLeft={`${category?.href === item.href ? "3" : "0"}px solid`}
-          >
-            <item.icon
-              sx={{
-                fontSize: "28px",
-                mb: "0.5rem",
-              }}
-            />
-            <Typography
-              className="ellipsis"
-              textAlign="center"
-              fontSize="11px"
-              lineHeight="1"
-            >
-              {item.title}
-            </Typography>
-          </Box>
-        ))}
-      </Box>
+      {/*// <Box className="main-category-holder">*/}
+      {/*//   {navigations.map((item) => (*/}
+      {/*    <Box*/}
+      {/*//       key={item.title}*/}
+      {/*//       className="main-category-box"*/}
+      {/*//       onClick={handleCategoryClick(item)}*/}
+      {/*      borderLeft={`${category?.href === item.href ? "3" : "0"}px solid`}*/}
+      {/*//     >*/}
+      {/*//       <item.icon*/}
+      {/*//         sx={{*/}
+      {/*          fontSize: "28px",*/}
+      {/*          mb: "0.5rem",*/}
+      {/*        }}*/}
+      {/*      />*/}
+      {/*      <Typography*/}
+      {/*        className="ellipsis"*/}
+      {/*//         textAlign="center"*/}
+      {/*//         fontSize="11px"*/}
+      {/*//         lineHeight="1"*/}
+      {/*//       >*/}
+      {/*/!*        {item.title}*!/*/}
+      {/*      </Typography>*/}
+      {/*    </Box>*/}
+      {/*  ))}*/}
+      {/*</Box>*/}
 
-      <Box className="container">
+      <Box className="container" style={{left:'0px'}}>
         <Typography fontWeight="600" fontSize="15px" mb={2}>
           Recommended Categories
         </Typography>
@@ -124,42 +124,42 @@ const suggestion = [
   {
     title: "Belt",
     href: "/belt",
-    imgUrl: "/assets/images/products/categories/belt.png",
+    imgUrl: "/assets/images/Gift Shop/lamp1.png",
   },
   {
     title: "Hat",
     href: "/Hat",
-    imgUrl: "/assets/images/products/categories/hat.png",
+    imgUrl: "/assets/images/Gift Shop/lamp3.png",
   },
   {
     title: "Watches",
     href: "/Watches",
-    imgUrl: "/assets/images/products/categories/watch.png",
+    imgUrl: "/assets/images/Gift Shop/lamp2.png",
   },
   {
     title: "Sunglasses",
     href: "/Sunglasses",
-    imgUrl: "/assets/images/products/categories/sunglass.png",
+    imgUrl: "/assets/images/Gift Shop/lampP11.png",
   },
   {
     title: "Sneakers",
     href: "/Sneakers",
-    imgUrl: "/assets/images/products/categories/sneaker.png",
+    imgUrl: "/assets/images/Gift Shop/lampP12.png",
   },
   {
     title: "Sandals",
     href: "/Sandals",
-    imgUrl: "/assets/images/products/categories/sandal.png",
+    imgUrl: "/assets/images/Gift Shop/lampP13.png",
   },
   {
     title: "Formal",
     href: "/Formal",
-    imgUrl: "/assets/images/products/categories/shirt.png",
+    imgUrl: "/assets/images/Gift Shop/lampPI2.png",
   },
   {
     title: "Casual",
     href: "/Casual",
-    imgUrl: "/assets/images/products/categories/t-shirt.png",
+    imgUrl: "/assets/images/Gift Shop/lampTS3.png",
   },
 ];
 export default MobileCategoryNav;

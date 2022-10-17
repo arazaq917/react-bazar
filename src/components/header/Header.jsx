@@ -134,7 +134,7 @@ const Header = ({ isFixed, className, searchBoxType = "type1" }) => {
           <MiniCart />
         </Drawer>
 
-        {downMd && <MobileMenu />}
+        {/*{downMd && <MobileMenu />}*/}
       </Container>
     </HeaderWrapper>
   );
