@@ -122,22 +122,22 @@ const MobileCategoryNav = () => {
 
 const suggestion = [
   {
-    title: "Belt",
+    title: "Lamp",
     href: "/belt",
     imgUrl: "/assets/images/Gift Shop/lamp1.png",
   },
   {
-    title: "Hat",
+    title: "Lamp",
     href: "/Hat",
     imgUrl: "/assets/images/Gift Shop/lamp3.png",
   },
   {
-    title: "Watches",
+    title: "Lamp",
     href: "/Watches",
     imgUrl: "/assets/images/Gift Shop/lamp2.png",
   },
   {
-    title: "Sunglasses",
+    title: "Lamp",
     href: "/Sunglasses",
     imgUrl: "/assets/images/Gift Shop/lampP11.png",
   },
@@ -147,7 +147,7 @@ const suggestion = [
     imgUrl: "/assets/images/Gift Shop/lampP12.png",
   },
   {
-    title: "Sandals",
+    title: "Lamp",
     href: "/Sandals",
     imgUrl: "/assets/images/Gift Shop/lampP13.png",
   },
@@ -157,7 +157,7 @@ const suggestion = [
     imgUrl: "/assets/images/Gift Shop/lampPI2.png",
   },
   {
-    title: "Casual",
+    title: "Lamp",
     href: "/Casual",
     imgUrl: "/assets/images/Gift Shop/lampTS3.png",
   },
