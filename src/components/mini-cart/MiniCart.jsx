@@ -11,7 +11,8 @@ import LazyImage from "components/LazyImage";
 import { H5, Tiny } from "components/Typography";
 import { useAppContext } from "contexts/AppContext";
 import Link from "next/link";
-import React, { useCallback } from "react"; // =========================================================
+import React, { useCallback } from "react";
+import Image from "next/image"; // =========================================================
 
 // =========================================================
 const MiniCart = ({ toggleSidenav }) => {
@@ -119,11 +120,12 @@ const MiniCart = ({ toggleSidenav }) => {
 
             <Link href={`/product/${item.id}`}>
               <a>
-                <BazaarAvatar
+                <Image
                   mx={2}
                   width={76}
                   height={76}
                   alt={item.name}
+                  objectFit="contain"
                   src={item.imgUrl || "/assets/images/products/iphone-x.png"}
                 />
               </a>

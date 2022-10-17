@@ -112,12 +112,6 @@ const Topbar = ({ bgColor }) => {
           <BazaarMenu
             handler={
               <TouchRipple className="handler marginRight">
-                <Image
-                    display="block"
-                    height="15px"
-                    width="20px"
-                    src={language.imgUrl}
-                />
                 <Span className="menuTitle">{language.title}</Span>
                 <ExpandMore fontSize="inherit" />
               </TouchRipple>
@@ -138,12 +132,6 @@ const Topbar = ({ bgColor }) => {
             direction="right"
             handler={
               <TouchRipple className="handler">
-                <Image
-                    display="block"
-                    height="15px"
-                    width="20px"
-                    src={currency.imgUrl}
-                />
                 <Span className="menuTitle">{currency.title}</Span>
                 <ExpandMore fontSize="inherit" />
               </TouchRipple>

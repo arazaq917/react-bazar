@@ -27,8 +27,6 @@ const ShopLayout2 = ({ children, showTopbar = true, showNavbar = true }) => {
       </Sticky>
 
       <Box zIndex={1} position="relative" className="section-after-sticky">
-        {/* NAVIGATION BAR */}
-        {showNavbar && <Navbar elevation={0} />}
 
         {/* BODY CONTENT */}
         {children}

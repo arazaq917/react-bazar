@@ -1,12 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Add, Close, Remove } from "@mui/icons-material";
 import { Button, Card, IconButton, styled } from "@mui/material";
-import Image from "components/BazaarImage";
+// import Image from "components/BazaarImage";
 import { FlexBox } from "components/flex-box";
 import { Span } from "components/Typography";
 import { useAppContext } from "contexts/AppContext";
 import Link from "next/link";
-import React, { useCallback } from "react"; // styled components
+import React, { useCallback } from "react";
+import Image from "next/image";
+// import Image from "../BazaarImage"; // styled components
 
 const Wrapper = styled(Card)(({ theme }) => ({
   display: "flex",
@@ -52,6 +54,7 @@ const ProductCard7 = ({ id, name, qty, price, imgUrl }) => {
         width={140}
         height={140}
         display="block"
+        objectFit="contain"
         src={imgUrl || "/assets/images/products/iphone-xi.png"}
       />
 

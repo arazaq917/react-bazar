@@ -73,16 +73,16 @@ const Header = ({ isFixed, className, searchBoxType = "type1" }) => {
             </a>
           </Link>
 
-          {isFixed && (
-            <CategoryMenu>
-              <FlexBox color="grey.600" alignItems="center" ml={2}>
-                <BazaarButton color="inherit">
-                  <Category fontSize="small" color="inherit" />
-                  <KeyboardArrowDown fontSize="small" color="inherit" />
-                </BazaarButton>
-              </FlexBox>
-            </CategoryMenu>
-          )}
+          {/*{isFixed && (*/}
+          {/*  <CategoryMenu>*/}
+          {/*    <FlexBox color="grey.600" alignItems="center" ml={2}>*/}
+          {/*      <BazaarButton color="inherit">*/}
+          {/*        <Category fontSize="small" color="inherit" />*/}
+          {/*        <KeyboardArrowDown fontSize="small" color="inherit" />*/}
+          {/*      </BazaarButton>*/}
+          {/*    </FlexBox>*/}
+          {/*  </CategoryMenu>*/}
+          {/*)}*/}
         </FlexBox>
 
         <FlexBox justifyContent="center" flex="1 1 0">

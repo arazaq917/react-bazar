@@ -3,7 +3,6 @@ import ShopLayout1 from "components/layouts/ShopLayout1";
 import MobileNavigationBar2 from "components/mobile-navigation/MobileNavigationBar2";
 import SideNavbar from "components/page-sidenav/SideNavbar";
 import SEO from "components/SEO";
-import Setting from "components/Setting";
 import GiftShopAllProducts from "pages-sections/giftshop/GiftShopAllProducts";
 import GiftShopPopularItems from "pages-sections/giftshop/GiftShopPopularItems";
 import GiftShopSection1 from "pages-sections/giftshop/GiftShopSection1";
@@ -54,7 +53,7 @@ const GiftShop = (props) => {
     useEffect(() => setSidebarHeight(pageContentRef.current.offsetHeight), []);
     return (
         <ShopLayout1 showTopbar={false}>
-            <SEO title="Gift shop template" />
+            <SEO title="LAMP IN BOX" />
             <GiftShopSection1 />
 
             <StyledContainer
@@ -84,8 +83,6 @@ const GiftShop = (props) => {
             <GiftShopPopularItems productsData={props.popularProducts} />
             <GiftShopTopSales productsData={props.topSailedProducts} />
             <GiftShopAllProducts productsData={props.giftShopProducts} />
-
-            <Setting />
 
             <MobileNavigationBar2>
                 <SideNavbar

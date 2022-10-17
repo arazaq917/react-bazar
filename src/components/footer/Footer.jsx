@@ -116,7 +116,7 @@ const Footer = () => {
                 <FlexBox className="flex" mx={-0.625}>
                   {iconList.map((item, ind) => (
                     <a
-                      href={item.url}
+                      // href={item.url}
                       target="_blank"
                       rel="noreferrer noopenner"
                       key={ind}
@@ -158,15 +158,15 @@ const customerCareLinks = [
 const iconList = [
   {
     icon: Facebook,
-    url: "https://www.facebook.com/UILibOfficial",
+    url: "",
   },
   {
     icon: Twitter,
-    url: "https://twitter.com/uilibofficial",
+    url: "",
   },
   {
     icon: Youtube,
-    url: "https://www.youtube.com/channel/UCsIyD-TSO1wQFz-n2Y4i3Rg",
+    url: "",
   },
   {
     icon: Google,
@@ -174,7 +174,7 @@ const iconList = [
   },
   {
     icon: Instagram,
-    url: "https://www.instagram.com/uilibofficial/",
+    url: "",
   },
 ];
 export default Footer;

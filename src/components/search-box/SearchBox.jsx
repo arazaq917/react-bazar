@@ -131,18 +131,25 @@ const SearchBox = () => {
 
 const categories = [
   "All Categories",
-  "Car",
-  "Clothes",
-  "Electronics",
-  "Laptop",
-  "Desktop",
-  "Camera",
-  "Toys",
+  "Modern Art",
+  "Artistic Prints",
+  "Classic Flowers",
+  "Moditerranean Print",
+  "Ancient Maps",
+  "Mid-century Patterns",
+  "Nature, Landscapes",
+  "Animal Prints",
+  "Plup Art, Electric",
+  "Zodiac & Astrology",
+  "Music Lovers",
 ];
 const dummySearchResult = [
-  "Macbook Air 13",
-  "Asus K555LA",
-  "Acer Aspire X453",
-  "iPad Mini 3",
+  "Artistic Prints",
+  "Classic Flowers",
+  "Nature, Landscapes",
+  "Animal Prints",
+  "Plup Art, Electric",
+  "Zodiac & Astrology",
+  "Music Lovers",
 ];
 export default SearchBox;

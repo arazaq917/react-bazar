@@ -4,57 +4,57 @@ export const giftShopNavigation = [
     categoryItem: [
       {
         icon: "Children",
-        title: "Children's",
+        title: "Modern Art",
         href: "/product/search/Fruits & Vegetables",
       },
       {
         icon: "Chirstmas",
-        title: "Christmas Gifts",
+        title: "Artistic Prints",
         href: "/product/search/Dariry & Eggs",
       },
       {
         icon: "Flower",
-        title: "Flower",
+        title: "Classic Flowers",
         href: "/product/search/Dariry & Eggs",
       },
       {
         icon: "TeddyBear",
-        title: "Teddy Bears",
+        title: "Moditerranean Print",
         href: "/product/search/Breakfast",
       },
       {
         icon: "ValentineGift",
-        title: "Valentine Gifts",
+        title: "Ancient Maps",
         href: "/product/search/Frozen",
       },
       {
         icon: "WeddingGift",
-        title: "Wedding Gifts",
+        title: "Mid-century Patterns",
         href: "/product/search/Organic",
       },
       {
         icon: "NewYearGift",
-        title: "New Year Gift",
+        title: "Nature, Landscapes",
         href: "/product/search/Canned Food",
       },
       {
         icon: "Toys",
-        title: "Toys",
+        title: "Animal Prints",
         href: "/product/search/Coffee & Snacks",
       },
       {
         icon: "Football",
-        title: "Ball",
+        title: "Plup Art, Electric",
         href: "/product/search/Sauces & Jems",
       },
       {
         icon: "BabyToys",
-        title: "Baby Toys",
+        title: "Zodiac & Astrology",
         href: "/product/search/Sauces & Jems",
       },
       {
         icon: "Robot",
-        title: "Robot",
+        title: "Music Lovers",
         href: "/product/search/Sauces & Jems",
       },
     ],

@@ -5,23 +5,23 @@ const initialState = {
   cart: [
     {
       price: 250,
-      name: "Ford 2019",
-      imgUrl: "/assets/images/products/Automotive/1.Ford2019.png",
+      name: "Geometric Pattern Tripod",
+      imgUrl: "/assets/images/Gift Shop/lamp1.png",
       id: "7222243834583537",
       qty: 1,
     },
     {
       price: 250,
-      name: "Porsche 2020",
-      imgUrl: "/assets/images/products/Automotive/28.Porsche2020.png",
+      name: "Tripod Lamp, Psychedelic Art",
+      imgUrl: "/assets/images/Gift Shop/lampP11.png",
       id: "38553442244076086",
       qty: 1,
     },
     {
       price: 250,
-      name: "Heavy 20kt Gold Necklace",
+      name: "Music Table Lamp, Printed Lamp Shades",
       imgUrl:
-        "/assets/images/products/Fashion/Jewellery/9.Heavy20ktGoldNecklace.png",
+        "/assets/images/Gift Shop/lampTS2.png",
       id: "9573201630529315",
       qty: 1,
     },
