@@ -1,54 +1,52 @@
 import { Box, Button, Grid } from "@mui/material";
 import CategorySectionCreator from "components/CategorySectionCreator";
 import ProductCard16 from "components/product-cards/ProductCard16";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import parse from 'html-dom-parser';
 import axios from "axios";
 
 const GiftShopAllProducts = ({ productsData }) => {
-    const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-popular-categories";
+    const [data,setData] = useState([])
+    const domainUrl = "https://lampinboxportal.azurewebsites.net";
+    const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-all-products";
     useEffect(()=>{
-        let token = sessionStorage.getItem('token');
-        const config = {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type':'application/json',
-                'X-Response-View':'Json',
+        axios.post(url,{
+            "requestParameters": {
+                "SearchTerm": "",
+                "SizeID": null,
+                "ColorID": null,
+                "CategoryID": null,
+                "TagID": null,
+                "ManufacturerID": null,
+                "MinPrice": null,
+                "MaxPrice": null,
+                "Rating": null,
+                "OrderByColumnName": 0,
+                "PageNo": 1,
+                "PageSize": 5,
+                "recordValueJson": "[]"
             }
-    };
-        // axios.get(url,config)
-        //     .then(res=>{
-        //         let htmlData = res.data.trim();
-        //         var doc = new DOMParser().parseFromString(htmlData, "text/html");
-        //         let newString = doc.querySelector('.page').innerText.trim();
-        //         let jsonData = newString.split('\n').filter(f=>f!=='    ');
-        //         let tempArr = [];
-        //         jsonData.forEach(e=>{
-        //             e.trim()
-        //             tempArr.push(e)
-        //         })
-        //         console.log(tempArr)
-        //         // let newArr = newString.replace(/(<.*?>)|\s+/g, (m, $1) => $1 ? $1 : ' ');
-        //         // newArr = newArr.filter(f=>f!=='\n').join(',');
-        //
-        //         // console.log('data',`[${newArr.trim()}]`);
-        //         // console.log('type',JSON.parse(`[${newArr.trim()}]`));
-        //
-        //      })
-        //     .catch(err=> console.log(err))
+        }).then(res=>{
+            console.log('response',JSON.parse(res.data.data))
+            setData(JSON.parse(res.data.data));
+            console.log(JSON.parse(res.data.data)[1].Price)
+        }).catch(e=>{
+            console.log('error',e)
+        })
+
     },[])
   return (
     <CategorySectionCreator title="All Products" seeMoreLink="#">
       <Grid container mb={-0.5} spacing={3}>
-        {productsData.map((item, ind) => (
+        {data.map((item, ind) => (
           <Grid key={ind} item md={3} sm={6} xs={12}>
             <ProductCard16
-              id={item.id}
-              imgUrl={item.imgUrl}
-              title={item.title}
-              rating={item.rating}
-              price={item.price}
-              off={item.discount}
+              id={item.ProductId}
+              imgUrl={`${domainUrl}${item.ProductImagesJson[0].AttachmentURL}`}
+              title={item.ProductName}
+              rating={item.Rating}
+              price={item.Price}
+              off={item.IsDiscountAllowed?10:0}
             />
           </Grid>
         ))}
