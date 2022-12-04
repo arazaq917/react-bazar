@@ -12,8 +12,14 @@ import GiftShopServices from "pages-sections/giftshop/GiftShopServices";
 import GiftShopTopSales from "pages-sections/giftshop/GiftShopTopSales";
 import TopCategorySection from "pages-sections/giftshop/TopCategorySection";
 import { useEffect, useRef, useState } from "react";
+
+import { useAuth0 } from '@auth0/auth0-react';
+import useSWR from 'swr';
+
+import axios from "axios";
 import api from "utils/api/gift-shop";
 import { layoutConstant } from "utils/constants";
+
 const StyledContainer = styled(Container)(({ theme }) => ({
     display: "flex",
     ".sidenav": {
@@ -48,10 +54,28 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 })); // ========================================================
 
 // ========================================================
+
+
 const GiftShop = (props) => {
+    const url = "https://lampinbox.azurewebsites.net/tokenweb/guest";
     const pageContentRef = useRef();
     const [sidebarHeight, setSidebarHeight] = useState(0);
-    useEffect(() => setSidebarHeight(pageContentRef.current.offsetHeight), []);
+
+
+    useEffect(() => {
+        setSidebarHeight(pageContentRef.current.offsetHeight)
+        // axios.post(url)
+        //     .then(res=>{
+        //         console.log('data',res.data.AccessToken)
+        //             if (res.status == 200) {
+        //                 sessionStorage.setItem("token", res.data.AccessToken)
+        //             } else {
+        //                 throw Error(res.statusText)
+        //             } })
+        //     .catch(err=> console.log(err));
+
+
+    }, []);
     return (
         <ShopLayout1 showTopbar={false}>
             <SEO title="Gift shop template" />
@@ -115,5 +139,8 @@ export async function getStaticProps() {
             giftShopTopCategories,
         },
     };
-}
+};
+
+
+
 export default GiftShop;
