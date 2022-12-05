@@ -182,7 +182,7 @@ const ProductCard16 = (props) => {
           {/*)}*/}
         </FlexRowCenter>
 
-        <Link href={`/product/${id}`}>
+        <Link href={`/product/id=${id}`}>
           <a>
             <H3
               my="6px"

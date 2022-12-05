@@ -9,23 +9,29 @@ import { H1, H2, H3, H6 } from "components/Typography";
 import { useAppContext } from "contexts/AppContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useCallback, useState } from "react"; // import ImageViewer from "react-simple-image-viewer";
+import React, {useCallback, useEffect, useState} from "react"; // import ImageViewer from "react-simple-image-viewer";
 
 import { FlexBox, FlexRowCenter } from "../flex-box"; // ================================================================
 
 // ================================================================
-const ProductIntro = ({ product }) => {
+const ProductIntro = ({ product,datal }) => {
   const { id, price, title, imgGroup } = product;
+  const { ProductId, Price, ProductName, ProductImagesJson } = datal;
   const router = useRouter();
   const routerId = router.query.id;
   const [selectedImage, setSelectedImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [data,setData] = useState([])
   const { state, dispatch } = useAppContext();
   const cartList = state.cart;
+  const domainUrl = "https://lampinboxportal.azurewebsites.net";
   const cartItem = cartList.find(
-    (item) => item.id === id || item.id === routerId
+    (item) => item.id === datal.ProductId || item.id === routerId
   );
+  useEffect(()=>{
+    console.log('datal',datal)
+  },[datal])
 
   const handleImageClick = (ind) => () => {
     setSelectedImage(ind);
@@ -43,11 +49,11 @@ const ProductIntro = ({ product }) => {
       dispatch({
         type: "CHANGE_CART_AMOUNT",
         payload: {
-          price,
+          price:datal.Price,
           qty: amount,
-          name: title,
-          imgUrl: imgGroup[0],
-          id: id || routerId,
+          name: datal.ProductName,
+          imgUrl: `${domainUrl}${datal.ProductImagesJson[0].AttachmentURL}`,
+          id: datal.ProductId || routerId,
         },
       });
     },
@@ -60,11 +66,11 @@ const ProductIntro = ({ product }) => {
           <FlexBox justifyContent="center" mb={6}>
             <LazyImage
               width={300}
-              alt={title}
+              alt={datal.ProductName}
               height={300}
               loading="eager"
               objectFit="contain"
-              src={product.imgGroup[selectedImage]} // onClick={() => openImageViewer(imgGroup.indexOf(imgGroup[selectedImage]))}
+              src={`${domainUrl}${datal.ProductImagesJson[selectedImage].AttachmentURL}`} // onClick={() => openImageViewer(imgGroup.indexOf(imgGroup[selectedImage]))}
             />
             {/* {isViewerOpen && (
              <ImageViewer
@@ -80,7 +86,7 @@ const ProductIntro = ({ product }) => {
           </FlexBox>
 
           <FlexBox overflow="auto">
-            {imgGroup.map((url, ind) => (
+            {datal.ProductImagesJson.map((url, ind) => (
               <FlexRowCenter
                 key={ind}
                 width={64}
@@ -94,19 +100,19 @@ const ProductIntro = ({ product }) => {
                   cursor: "pointer",
                 }}
                 onClick={handleImageClick(ind)}
-                mr={ind === imgGroup.length - 1 ? "auto" : "10px"}
+                mr={ind === datal.ProductImagesJson.length - 1 ? "auto" : "10px"}
                 borderColor={
                   selectedImage === ind ? "primary.main" : "grey.400"
                 }
               >
-                <BazaarAvatar src={url} variant="square" height={40} />
+                <BazaarAvatar src={`${domainUrl}${url.AttachmentURL}`} variant="square" height={40} />
               </FlexRowCenter>
             ))}
           </FlexBox>
         </Grid>
 
         <Grid item md={6} xs={12} alignItems="center">
-          <H1 mb={2}>{title}</H1>
+          <H1 mb={2}>{datal.ProductName}</H1>
 
           {/*<FlexBox alignItems="center" mb={2}>*/}
           {/*  <Box>Brand:</Box>*/}
@@ -128,7 +134,7 @@ const ProductIntro = ({ product }) => {
 
           <Box mb={3}>
             <H2 color="primary.main" mb={0.5} lineHeight="1">
-              ${price.toFixed(2)}
+              ${datal.Price.toFixed(2)}
             </H2>
             <Box color="inherit">Stock Available</Box>
           </Box>

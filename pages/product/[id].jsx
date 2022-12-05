@@ -1,5 +1,6 @@
 import { Box, Container, styled, Tab, Tabs } from "@mui/material";
 import ShopLayout1 from "components/layouts/ShopLayout1";
+import { useRouter } from "next/router";
 import AvailableShops from "components/products/AvailableShops";
 import FrequentlyBought from "components/products/FrequentlyBought";
 import ProductDescription from "components/products/ProductDescription";
@@ -13,6 +14,7 @@ import {
   getFrequentlyBought,
   getRelatedProducts,
 } from "utils/api/related-products";
+import axios from "axios";
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   minHeight: 0,
   marginTop: 80,
@@ -32,6 +34,10 @@ const ProductDetails = (props) => {
   const [selectedOption, setSelectedOption] = useState(0);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [frequentlyBought, setFrequentlyBought] = useState([]);
+  const [datal,setData] = useState([props.myProps])
+
+  const domainUrl = "https://lampinboxportal.azurewebsites.net";
+  const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-product_detail";
   /**
    * Note:
    * ==============================================================
@@ -44,6 +50,8 @@ const ProductDetails = (props) => {
   useEffect(() => {
     // getRelatedProducts().then((data) => setRelatedProducts(data));
     // getFrequentlyBought().then((data) => setFrequentlyBought(data));
+    console.log(datal[0][0])
+
   }, []);
 
   const handleOptionClick = (_, value) => setSelectedOption(value);
@@ -55,7 +63,7 @@ const ProductDetails = (props) => {
           my: 4,
         }}
       >
-        {product ? <ProductIntro product={product} /> : <H2>Loading...</H2>}
+        {datal ? <ProductIntro product={product} datal={datal[0][0]} /> : <H2>Loading...</H2>}
 
         <StyledTabs
           textColor="primary"
@@ -96,5 +104,18 @@ const ProductDetails = (props) => {
 //     props: { frequentlyBought, relatedProducts },
 //   };
 // }
-
+export async function getServerSideProps(context) {
+  const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-product_detail";
+  console.log(context.query.id)
+  const product = await axios.post(url,{
+    "requestParameters":{
+      "ProductId":context.query.id,
+      "recordValueJson": "[]"
+    }
+  });
+  const myProps =  JSON.parse(product.data.data)
+  return {
+    props: {myProps}, // will be passed to the page component as props
+  }
+}
 export default ProductDetails;
