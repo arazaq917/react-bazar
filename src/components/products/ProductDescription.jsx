@@ -1,13 +1,18 @@
 import { Box } from "@mui/material";
 import { H3 } from "components/Typography";
-import React from "react"; // ======================================================
+import React, {useEffect, useRef} from "react"; // ======================================================
 
 // ======================================================
-const ProductDescription = () => {
+const ProductDescription = ({datal}) => {
+    const specs = useRef(null);
+    useEffect(()=>{
+        specs.current.innerHtl = datal.FullDescription
+
+    },[])
   return (
     <Box>
       <H3 mb={2}>Specification:</H3>
-      <Box>
+      <Box ref={specs}>
           1. Silver galvanized steel Tripod Lamp, 11" tall by 7" wide (at shade) with on/off toggle switch on cord. <br />
           2. Shades are high-res printed Polyester with non-fade, archival inks (indoor use only). <br />
           3. All our lamps are UL or ETL listed or use UL components. <br />

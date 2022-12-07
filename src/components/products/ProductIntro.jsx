@@ -125,11 +125,11 @@ const ProductIntro = ({ product,datal }) => {
               <BazaarRating
                 color="warn"
                 fontSize="1.25rem"
-                value={4}
+                value={datal.Rating}
                 readOnly
               />
             </Box>
-            <H6 lineHeight="1">(50)</H6>
+            <H6 lineHeight="1">({datal.TotalReviews})</H6>
           </FlexBox>
 
           <Box mb={3}>
