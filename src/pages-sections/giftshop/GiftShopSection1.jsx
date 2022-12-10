@@ -2,7 +2,8 @@ import { Box, Button, Grid, styled, useTheme } from "@mui/material";
 import Carousel from "components/carousel/Carousel";
 import LazyImage from "components/LazyImage";
 import { H1, Paragraph } from "components/Typography";
-import React from "react"; // styled components
+import React, {useEffect, useState} from "react";
+import axios from "axios"; // styled components
 
 const StyledBox = styled(Box)(({ theme }) => ({
   marginBottom: 60,
@@ -66,14 +67,27 @@ const GridItemTwo = styled(Grid)(({ theme }) => ({
     display: "none",
   },
 }));
+const domainUrl = "https://lampinboxportal.azurewebsites.net";
+const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-home-screen-banner";
 
 const GiftShopSection1 = () => {
   const { palette } = useTheme();
+  const [banner,setBanner] = useState([])
+  useEffect(()=>{
+    const product = axios.post(url,{
+      "requestParameters":{
+        "recordValueJson": "[]"
+      }
+    }).then(res=>{
+      setBanner([...JSON.parse(res.data.data)])
+      console.log(JSON.parse(res.data.data))
+    });
+  },[])
   return (
     <StyledBox id="carouselBox">
       <Carousel
         spacing="0px"
-        totalSlides={3}
+        totalSlides={banner.length}
         showDots={true}
         autoPlay={false}
         visibleSlides={1}
@@ -81,14 +95,13 @@ const GiftShopSection1 = () => {
         dotClass="carousel-dot"
         dotColor={palette.primary.main}
       >
-        {[...new Array(3)].map((_item, ind) => (
+        {banner.map((item, ind) => (
           <StyledGrid container key={ind}>
             <GridItemOne item md={6} sm={6} xs={12}>
               <Box py={6}>
-                <Paragraph color="primary.main">LAMP SHOP -----</Paragraph>
+                <Paragraph color="primary.main">{item.MainTitle}</Paragraph>
                 <Box className="titleBox">
-                  <H1>Let’s Bring Light</H1>
-                  <H1>to Home</H1>
+                  <H1>{item.TopTitle}</H1>
                 </Box>
 
                 <StyledButton
@@ -110,7 +123,7 @@ const GiftShopSection1 = () => {
                 height={450}
                 layout="responsive"
                 objectFit="contain"
-                src="/assets/images/Gift Shop/Header.png"
+                src={`${domainUrl}${item.BannerImgUrl}`}
               />
             </GridItemTwo>
           </StyledGrid>
@@ -119,5 +132,6 @@ const GiftShopSection1 = () => {
     </StyledBox>
   );
 };
+
 
 export default GiftShopSection1;
