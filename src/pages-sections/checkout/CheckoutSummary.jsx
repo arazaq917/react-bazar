@@ -1,19 +1,35 @@
 import { Button, Divider, TextField, Typography } from "@mui/material";
 import Card1 from "components/Card1";
 import { FlexBetween, FlexBox } from "components/flex-box";
-import React from "react";
+import { useAppContext } from "contexts/AppContext";
+import React, {useEffect, useState} from "react";
 
 const CheckoutSummary = () => {
+    const { state } = useAppContext();
+    const cartList = state.cart;
+    const [price,setPrice] = useState(0);
+    useEffect(()=>{
+        console.log(cartList)
+            setPrice(getTotalPrice())
+    },[])
+    const getTotalPrice = ()=>{
+        let total =0;
+        cartList.forEach(e=>{
+            total = total+e.price*e.qty
+        })
+        return total
+    }
   return (
     <Card1>
       <FlexBetween mb={1}>
         <Typography color="grey.600">Subtotal:</Typography>
         <FlexBox alignItems="flex-end">
           <Typography fontSize="18px" fontWeight="600" lineHeight="1">
-            $2610.
+              ${`${price.toString().split('.')[0]}.`}
           </Typography>
           <Typography fontWeight="600" fontSize="14px" lineHeight="1">
-            00
+              {price.toString().split('.')[1] ? price.toString().split('.')[1] : '00' }
+
           </Typography>
         </FlexBox>
       </FlexBetween>
@@ -29,10 +45,7 @@ const CheckoutSummary = () => {
         <Typography color="grey.600">Tax:</Typography>
         <FlexBox alignItems="flex-end">
           <Typography fontSize="18px" fontWeight="600" lineHeight="1">
-            $40.
-          </Typography>
-          <Typography fontWeight="600" fontSize="14px" lineHeight="1">
-            00
+            -
           </Typography>
         </FlexBox>
       </FlexBetween>
@@ -58,7 +71,7 @@ const CheckoutSummary = () => {
         textAlign="right"
         mb={3}
       >
-        $2610.00
+        ${price}
       </Typography>
 
       <TextField

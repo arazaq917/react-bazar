@@ -165,7 +165,7 @@ const MiniCart = ({ toggleSidenav }) => {
 
       {!!cartList.length && (
         <Box p={2.5}>
-          <Link href="/checkout-alternative" passHref>
+          <Link href="/checkout" passHref>
             <BazaarButton
               fullWidth
               color="primary"
