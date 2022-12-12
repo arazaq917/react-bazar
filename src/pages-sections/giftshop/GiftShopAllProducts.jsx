@@ -51,11 +51,6 @@ const GiftShopAllProducts = ({ productsData }) => {
           </Grid>
         ))}
       </Grid>
-      <Box mt={6} display="flex" justifyContent="center">
-        <Button color="primary" variant="contained">
-          Load More...
-        </Button>
-      </Box>
     </CategorySectionCreator>
   );
 };

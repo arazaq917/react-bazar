@@ -14,7 +14,7 @@ const CategorySectionCreator = (props) => {
         {title && (
           <CategorySectionHeader
             title={title}
-            seeMoreLink={seeMoreLink}
+            seeMoreLink={null}
             icon={icon}
           />
         )}

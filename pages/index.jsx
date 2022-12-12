@@ -63,7 +63,7 @@ const GiftShop = (props) => {
 
 
     useEffect(() => {
-        setSidebarHeight(pageContentRef.current.offsetHeight)
+        // setSidebarHeight(pageContentRef.current.offsetHeight)
         // axios.post(url)
         //     .then(res=>{
         //         console.log('data',res.data.AccessToken)
@@ -81,32 +81,32 @@ const GiftShop = (props) => {
             <SEO title="Gift shop template" />
             <GiftShopSection1 />
 
-            <StyledContainer
-                sx={{
-                    mb: 6,
-                }}
-            >
-                <Box className="sidenav">
-                    <SideNavbar
-                        lineStyle="dash"
-                        sidebarStyle="style2"
-                        navList={props.giftShopNavList}
-                        sidebarHeight={sidebarHeight || "85vh"}
-                    />
-                </Box>
+            {/*<StyledContainer*/}
+            {/*    sx={{*/}
+            {/*        mb: 6,*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    /!*<Box className="sidenav">*!/*/}
+            {/*    /!*    <SideNavbar*!/*/}
+            {/*    /!*        lineStyle="dash"*!/*/}
+            {/*    /!*        sidebarStyle="style2"*!/*/}
+            {/*    /!*        navList={props.giftShopNavList}*!/*/}
+            {/*    /!*        sidebarHeight={sidebarHeight || "85vh"}*!/*/}
+            {/*    /!*    />*!/*/}
+            {/*    /!*</Box>*!/*/}
 
-                <Box className="pageContent" ref={pageContentRef}>
-                    <GiftShopServices serviceData={props.giftShopServicesList} />
-                    <GiftShopSection3 />
+            {/*    <Box className="pageContent" ref={pageContentRef}>*/}
+            {/*        /!*<GiftShopServices serviceData={props.giftShopServicesList} />*!/*/}
+            {/*        /!*<GiftShopSection3 />*!/*/}
 
-                    <Box my={6} className="categories">
-                        <TopCategorySection categoryList={props.giftShopTopCategories} />
-                    </Box>
-                </Box>
-            </StyledContainer>
-
+            {/*        <Box my={6} className="categories">*/}
+            {/*            <TopCategorySection categoryList={props.giftShopTopCategories} />*/}
+            {/*        </Box>*/}
+            {/*    </Box>*/}
+            {/*</StyledContainer>*/}
+            <TopCategorySection categoryList={props.giftShopTopCategories} />
             <GiftShopPopularItems productsData={props.popularProducts} />
-            <GiftShopTopSales productsData={props.topSailedProducts} />
+            {/*<GiftShopTopSales productsData={props.topSailedProducts} />*/}
             <GiftShopAllProducts productsData={props.giftShopProducts} />
 
             <Setting />
