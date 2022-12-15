@@ -84,13 +84,6 @@ const Setting = () => {
   return (
     <ClickAwayListener onClickAway={() => setShowBody(false)}>
       <MainContainer>
-        <Tooltip title="Settings & Demos" placement="left">
-          <StyledIconButton onClick={() => setShowBody((state) => !state)}>
-            {!showBody && <Settings />}
-            {showBody && <Close />}
-          </StyledIconButton>
-        </Tooltip>
-
         <BodyWrapper showBody={showBody ? 1 : 0}>
           <FlexBox gap={2}>
             <Button

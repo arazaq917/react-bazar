@@ -78,7 +78,7 @@ const GiftShop = (props) => {
     }, []);
     return (
         <ShopLayout1 showTopbar={false}>
-            <SEO title="Gift shop template" />
+            <SEO title="Lamp In Box" />
             <GiftShopSection1 />
 
             {/*<StyledContainer*/}
@@ -108,8 +108,6 @@ const GiftShop = (props) => {
             <GiftShopPopularItems productsData={props.popularProducts} />
             {/*<GiftShopTopSales productsData={props.topSailedProducts} />*/}
             <GiftShopAllProducts productsData={props.giftShopProducts} />
-
-            <Setting />
 
             <MobileNavigationBar2>
                 <SideNavbar

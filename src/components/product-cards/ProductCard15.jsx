@@ -13,7 +13,8 @@ const StyledCard = styled(Box)(({ theme }) => ({
 }));
 const ImgBox = styled(Box)(({ theme }) => ({
   padding: "27px 40px 27px 40px",
-  background: theme.palette.primary[100],
+  background: '#ffffff',
+boxShadow: theme.shadows[2],
 })); // ===================================================
 
 // ===================================================
@@ -34,7 +35,7 @@ const ProductCard15 = (props) => {
       <H6 fontSize={15} mt="8px" mb="2px">
         {title}
       </H6>
-      <Paragraph color="grey.600">{available}</Paragraph>
+      <Paragraph color="grey.600">{available} Available Items</Paragraph>
     </StyledCard>
   );
 };

@@ -14,10 +14,12 @@ import { useCallback, useState } from "react";
 const StyledCard = styled(Box)(({ theme }) => ({
   height: "100%",
   margin: "auto",
+  marginTop: "2px",
   borderRadius: 0,
   overflow: "hidden",
   position: "relative",
   transition: "all 250ms ease-in-out",
+  boxShadow: 'rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset',
   "&:hover": {
     boxShadow: theme.shadows[2],
     "& .css-1i2n18j": {
@@ -33,7 +35,7 @@ const ImgBox = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   position: "relative",
   padding: "27px 40px 27px 40px",
-  background: theme.palette.primary[100],
+  background: '#ffffff',
 }));
 const ItemController = styled(FlexBetween)(({ theme }) => ({
   width: 35,
