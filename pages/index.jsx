@@ -39,8 +39,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
     ".pageContent": {
         left: "unset",
         position: "relative",
-        marginLeft: "1.75rem",
-        width: `calc(100% - 2.5rem - ${layoutConstant.grocerySidenavWidth}px)`,
+        width: `100%`,
         [theme.breakpoints.down("md")]: {
             width: "100%",
             "& .MuiGrid-item": {
@@ -81,29 +80,12 @@ const GiftShop = (props) => {
             <SEO title="Lamp In Box" />
             <GiftShopSection1 />
 
-            {/*<StyledContainer*/}
-            {/*    sx={{*/}
-            {/*        mb: 6,*/}
-            {/*    }}*/}
-            {/*>*/}
-            {/*    /!*<Box className="sidenav">*!/*/}
-            {/*    /!*    <SideNavbar*!/*/}
-            {/*    /!*        lineStyle="dash"*!/*/}
-            {/*    /!*        sidebarStyle="style2"*!/*/}
-            {/*    /!*        navList={props.giftShopNavList}*!/*/}
-            {/*    /!*        sidebarHeight={sidebarHeight || "85vh"}*!/*/}
-            {/*    /!*    />*!/*/}
-            {/*    /!*</Box>*!/*/}
-
-            {/*    <Box className="pageContent" ref={pageContentRef}>*/}
-            {/*        /!*<GiftShopServices serviceData={props.giftShopServicesList} />*!/*/}
-            {/*        /!*<GiftShopSection3 />*!/*/}
-
-            {/*        <Box my={6} className="categories">*/}
-            {/*            <TopCategorySection categoryList={props.giftShopTopCategories} />*/}
-            {/*        </Box>*/}
-            {/*    </Box>*/}
-            {/*</StyledContainer>*/}
+            <StyledContainer>
+                <Box className="pageContent" ref={pageContentRef}>
+                    <GiftShopServices serviceData={props.giftShopServicesList} />
+                    {/*<GiftShopSection3 />*/}
+                </Box>
+            </StyledContainer>
             <TopCategorySection categoryList={props.giftShopTopCategories} />
             <GiftShopPopularItems productsData={props.popularProducts} />
             {/*<GiftShopTopSales productsData={props.topSailedProducts} />*/}
