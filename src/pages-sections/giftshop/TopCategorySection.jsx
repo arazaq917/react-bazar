@@ -16,7 +16,7 @@ const TopCategorySection = ({ categoryList }) => {
   const [visibleSlides, setVisibleSlides] = useState(3);
   const domainUrl = "https://lampinboxportal.azurewebsites.net"
   const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-popular-categories";
-  const [data,setData] = useState([])
+  const [data,setData] = useState([...categoryList])
   useEffect(() => {
     if (width < 500) setVisibleSlides(1);
     else if (width < 650) setVisibleSlides(2);
@@ -25,18 +25,6 @@ const TopCategorySection = ({ categoryList }) => {
 
 
   }, [width]);
-  useEffect(()=>{
-      axios.post(url,{
-          "requestParameters":{
-              "recordValueJson": "[]"
-          }
-      }).then(res=>{
-          console.log('response',JSON.parse(res.data.data))
-          setData(JSON.parse(res.data.data));
-      }).catch(e=>{
-          console.log('error',e)
-      })
-  },[])
   return (
       <CategorySectionCreator title="Top Categories" seeMoreLink="#">
         <Grid container mb={-0.5} spacing={3}>

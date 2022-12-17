@@ -6,7 +6,14 @@ const getGiftShopNavigation = async () => {
 };
 
 const getPopularProducts = async () => {
-  const response = await axios.get("/api/gift-shop/popular-products");
+  const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-recents-products-list";
+  const response = await axios.post(url,{
+    "requestParameters":{
+      "PageNo": 1,
+      "PageSize": 100,
+      "recordValueJson": "[]"
+    }
+  })
   return response.data;
 };
 
@@ -26,7 +33,12 @@ const getGiftShopServiceList = async () => {
 };
 
 const getGiftShopTopCategories = async () => {
-  const response = await axios.get("/api/gift-shop/top-categories");
+  const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-popular-categories";
+  const response = await  axios.post(url,{
+    "requestParameters":{
+      "recordValueJson": "[]"
+    }
+  });
   return response.data;
 }; // eslint-disable-next-line import/no-anonymous-default-export
 

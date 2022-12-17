@@ -17,24 +17,8 @@ const GiftShopPopularItems = ({ productsData }) => {
     else if (width < 950) setVisibleSlides(4);
     else setVisibleSlides(4);
   }, [width]);
-    const [data,setData] = useState([])
+    const [data,setData] = useState([...productsData])
     const domainUrl = "https://lampinboxportal.azurewebsites.net";
-    const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-recents-products-list";
-    useEffect(()=>{
-        axios.post(url,{
-            "requestParameters":{
-                "PageNo": 1,
-                "PageSize": 100,
-                "recordValueJson": "[]"
-            }
-        }).then(res=>{
-            console.log('response',JSON.parse(res.data.data))
-            setData(JSON.parse(res.data.data));
-        }).catch(e=>{
-            console.log('error',e)
-        })
-
-    },[])
   return (
     <CategorySectionCreator title="Recent Items" seeMoreLink="#">
       <Carousel

@@ -19,6 +19,8 @@ import useSWR from 'swr';
 import axios from "axios";
 import api from "utils/api/gift-shop";
 import { layoutConstant } from "utils/constants";
+const domainUrl = "https://lampinboxportal.azurewebsites.net"
+const urlPopularCategories = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-popular-categories";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
     display: "flex",
@@ -59,23 +61,11 @@ const GiftShop = (props) => {
     const url = "https://lampinbox.azurewebsites.net/tokenweb/guest";
     const pageContentRef = useRef();
     const [sidebarHeight, setSidebarHeight] = useState(0);
-
-
-    useEffect(() => {
-        // setSidebarHeight(pageContentRef.current.offsetHeight)
-        // axios.post(url)
-        //     .then(res=>{
-        //         console.log('data',res.data.AccessToken)
-        //             if (res.status == 200) {
-        //                 sessionStorage.setItem("token", res.data.AccessToken)
-        //             } else {
-        //                 throw Error(res.statusText)
-        //             } })
-        //     .catch(err=> console.log(err));
-
-
-    }, []);
+     useEffect(()=>{
+         console.log('pop',JSON.parse(props.popularProducts.data))
+     },[])
     return (
+
         <ShopLayout1 showTopbar={false}>
             <SEO title="Lamp In Box" />
             <GiftShopSection1 />
@@ -86,8 +76,8 @@ const GiftShop = (props) => {
                     {/*<GiftShopSection3 />*/}
                 </Box>
             </StyledContainer>
-            <TopCategorySection categoryList={props.giftShopTopCategories} />
-            <GiftShopPopularItems productsData={props.popularProducts} />
+            <TopCategorySection categoryList={JSON.parse(props.giftShopTopCategories.data)} />
+            <GiftShopPopularItems productsData={JSON.parse(props.popularProducts.data)} />
             {/*<GiftShopTopSales productsData={props.topSailedProducts} />*/}
             <GiftShopAllProducts productsData={props.giftShopProducts} />
 
@@ -106,7 +96,6 @@ export async function getStaticProps() {
     const popularProducts = await api.getPopularProducts();
     const giftShopProducts = await api.getGiftShopProducts();
     const giftShopNavList = await api.getGiftShopNavigation();
-    const topSailedProducts = await api.getTopSailedProducts();
     const giftShopServicesList = await api.getGiftShopServiceList();
     const giftShopTopCategories = await api.getGiftShopTopCategories();
     return {
@@ -114,7 +103,6 @@ export async function getStaticProps() {
             giftShopNavList,
             popularProducts,
             giftShopProducts,
-            topSailedProducts,
             giftShopServicesList,
             giftShopTopCategories,
         },
