@@ -61,11 +61,12 @@ const GiftShop = (props) => {
     const url = "https://lampinbox.azurewebsites.net/tokenweb/guest";
     const pageContentRef = useRef();
     const [sidebarHeight, setSidebarHeight] = useState(0);
+
     return (
 
         <ShopLayout1 showTopbar={false}>
             <SEO title="Lamp In Box" />
-            <GiftShopSection1 />
+            <GiftShopSection1 topBanner = {JSON.parse(props.banner.data)}/>
 
             <StyledContainer>
                 <Box className="pageContent" ref={pageContentRef}>
@@ -95,6 +96,7 @@ export async function getStaticProps() {
     const giftShopNavList = await api.getGiftShopNavigation();
     const giftShopServicesList = await api.getGiftShopServiceList();
     const giftShopTopCategories = await api.getGiftShopTopCategories();
+    const banner = await api.getBanner();
     return {
         props: {
             giftShopNavList,
@@ -102,6 +104,7 @@ export async function getStaticProps() {
             giftShopProducts,
             giftShopServicesList,
             giftShopTopCategories,
+            banner
         },
     };
 };

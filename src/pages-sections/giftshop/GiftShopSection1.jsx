@@ -70,19 +70,9 @@ const GridItemTwo = styled(Grid)(({ theme }) => ({
 const domainUrl = "https://lampinboxportal.azurewebsites.net";
 const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-home-screen-banner";
 
-const GiftShopSection1 = () => {
+const GiftShopSection1 = ({topBanner}) => {
   const { palette } = useTheme();
-  const [banner,setBanner] = useState([])
-  useEffect(()=>{
-    const product = axios.post(url,{
-      "requestParameters":{
-        "recordValueJson": "[]"
-      }
-    }).then(res=>{
-      setBanner([...JSON.parse(res.data.data)])
-      console.log(JSON.parse(res.data.data))
-    });
-  },[])
+  const [banner,setBanner] = useState([...topBanner])
   return (
     <StyledBox id="carouselBox">
       <Carousel

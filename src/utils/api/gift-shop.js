@@ -49,6 +49,16 @@ const getGiftShopServiceList = async () => {
   return response.data;
 };
 
+const getBanner = async  ()=>{
+  const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-home-screen-banner";
+  const response = await axios.post(url,{
+    "requestParameters":{
+      "recordValueJson": "[]"
+    }
+  });
+  return response.data;
+}
+
 const getGiftShopTopCategories = async () => {
   const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-popular-categories";
   const response = await  axios.post(url,{
@@ -66,4 +76,5 @@ export default {
   getGiftShopNavigation,
   getGiftShopServiceList,
   getGiftShopTopCategories,
+  getBanner
 };
