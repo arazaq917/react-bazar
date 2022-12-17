@@ -23,7 +23,24 @@ const getTopSailedProducts = async () => {
 };
 
 const getGiftShopProducts = async () => {
-  const response = await axios.get("/api/gift-shop/all-products");
+  const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-all-products";
+  const response = await axios.post(url,{
+    "requestParameters": {
+      "SearchTerm": "",
+      "SizeID": null,
+      "ColorID": null,
+      "CategoryID": null,
+      "TagID": null,
+      "ManufacturerID": null,
+      "MinPrice": null,
+      "MaxPrice": null,
+      "Rating": null,
+      "OrderByColumnName": 0,
+      "PageNo": 1,
+      "PageSize": 5,
+      "recordValueJson": "[]"
+    }
+  });
   return response.data;
 };
 

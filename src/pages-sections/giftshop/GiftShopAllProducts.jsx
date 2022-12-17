@@ -6,35 +6,9 @@ import parse from 'html-dom-parser';
 import axios from "axios";
 
 const GiftShopAllProducts = ({ productsData }) => {
-    const [data,setData] = useState([])
+    const [data,setData] = useState([...productsData])
     const domainUrl = "https://lampinboxportal.azurewebsites.net";
     const url = "https://lampinboxportal.azurewebsites.net/api/v1/dynamic/dataoperation/get-all-products";
-    useEffect(()=>{
-        axios.post(url,{
-            "requestParameters": {
-                "SearchTerm": "",
-                "SizeID": null,
-                "ColorID": null,
-                "CategoryID": null,
-                "TagID": null,
-                "ManufacturerID": null,
-                "MinPrice": null,
-                "MaxPrice": null,
-                "Rating": null,
-                "OrderByColumnName": 0,
-                "PageNo": 1,
-                "PageSize": 5,
-                "recordValueJson": "[]"
-            }
-        }).then(res=>{
-            console.log('response',JSON.parse(res.data.data))
-            setData(JSON.parse(res.data.data));
-            console.log(JSON.parse(res.data.data)[1].Price)
-        }).catch(e=>{
-            console.log('error',e)
-        })
-
-    },[])
   return (
     <CategorySectionCreator title="All Products" seeMoreLink="#">
       <Grid container mb={-0.5} spacing={3}>

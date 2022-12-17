@@ -61,9 +61,6 @@ const GiftShop = (props) => {
     const url = "https://lampinbox.azurewebsites.net/tokenweb/guest";
     const pageContentRef = useRef();
     const [sidebarHeight, setSidebarHeight] = useState(0);
-     useEffect(()=>{
-         console.log('pop',JSON.parse(props.popularProducts.data))
-     },[])
     return (
 
         <ShopLayout1 showTopbar={false}>
@@ -79,7 +76,7 @@ const GiftShop = (props) => {
             <TopCategorySection categoryList={JSON.parse(props.giftShopTopCategories.data)} />
             <GiftShopPopularItems productsData={JSON.parse(props.popularProducts.data)} />
             {/*<GiftShopTopSales productsData={props.topSailedProducts} />*/}
-            <GiftShopAllProducts productsData={props.giftShopProducts} />
+            <GiftShopAllProducts productsData={JSON.parse(props.giftShopProducts.data)} />
 
             <MobileNavigationBar2>
                 <SideNavbar
