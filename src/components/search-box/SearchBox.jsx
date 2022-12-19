@@ -78,11 +78,11 @@ const SearchBox = () => {
         </DropDownHandler>
       }
     >
-      {categories.map((item) => (
-        <MenuItem key={item} onClick={handleCategoryChange(item)}>
-          {item}
-        </MenuItem>
-      ))}
+      {/*{categories.map((item) => (*/}
+      {/*  <MenuItem key={item} onClick={handleCategoryChange(item)}>*/}
+      {/*    {item}*/}
+      {/*  </MenuItem>*/}
+      {/*))}*/}
     </BazaarMenu>
   );
   return (
@@ -111,7 +111,6 @@ const SearchBox = () => {
               borderColor: "primary.main",
             },
           },
-          endAdornment: categoryDropdown,
           startAdornment: <SearchOutlinedIcon fontSize="small" />,
         }}
       />
