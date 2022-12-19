@@ -4,6 +4,7 @@ import MobileNavigationBar from "components/mobile-navigation/MobileNavigationBa
 import Sticky from "components/sticky/Sticky";
 import Topbar from "components/topbar/Topbar";
 import React, { Fragment, useCallback, useState } from "react";
+import Navbar from "components/navbar/Navbar";
 /**
  *  Used in:
  *  1. market-1, matket-2, gadget-shop,
@@ -19,14 +20,16 @@ import React, { Fragment, useCallback, useState } from "react";
 // ===================================================
 const ShopLayout1 = ({
   children,
+  showTopbar = true,
   topbarBgColor,
+  showNavbar = true,
 }) => {
   const [isFixed, setIsFixed] = useState(false);
   const toggleIsFixed = useCallback((fixed) => setIsFixed(fixed), []);
   return (
     <Fragment>
       {/* TOPBAR */}
-      {<Topbar bgColor={topbarBgColor} />}
+      {showTopbar && <Topbar bgColor={topbarBgColor} />}
 
       {/* HEADER */}
       <Sticky fixedOn={0} onSticky={toggleIsFixed} scrollDistance={300}>
@@ -34,6 +37,9 @@ const ShopLayout1 = ({
       </Sticky>
 
       <div className="section-after-sticky">
+        {/* NAVIGATION BAR */}
+        {showNavbar && <Navbar elevation={0} border={1} />}
+
         {/* BODY CONTENT */}
         {children}
       </div>

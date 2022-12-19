@@ -5,7 +5,7 @@ import {
   KeyboardArrowDown,
 } from "@mui/icons-material";
 import ArrowRight from "@mui/icons-material/ArrowRight";
-import { Box, Container, MenuItem, styled } from "@mui/material";
+import {Box, Button, Container, MenuItem, styled} from "@mui/material";
 import BazaarButton from "components/BazaarButton";
 import BazaarCard from "components/BazaarCard";
 import CategoryMenu from "components/categories/CategoryMenu";
@@ -16,7 +16,8 @@ import { Paragraph } from "components/Typography";
 import navbarNavigations from "data/navbarNavigations";
 import useSettings from "hooks/useSettings";
 import MegaMenu from "./MegaMenu";
-import MegaMenu2 from "./MegaMenu2"; // NavList props interface
+import MegaMenu2 from "./MegaMenu2";
+import React from "react"; // NavList props interface
 
 // const common css style
 const navLinkStyle = {
@@ -30,7 +31,22 @@ const navLinkStyle = {
   },
 }; // style components
 
-const StyledNavLink = styled(NavLink)(() => ({ ...navLinkStyle }));
+const StyledNavLink = styled(NavLink)(() => ({
+  fontWeight: 600,
+  fontSize: "12px",
+  marginTop: "5px",
+  textTransform: 'capitalize',
+  color: '#fff',
+  borderRadius: 0,
+  background: '#bab2b4',
+  paddingLeft: '30px',
+  paddingRight: '30px',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  "&:hover": {
+    color: "#fff",
+  },
+  ...navLinkStyle }));
 const ParentNav = styled(Box)(({ theme }) => ({
   "&:hover": {
     color: theme.palette.primary.main,
@@ -82,118 +98,21 @@ const ChildNavsWrapper = styled(Box)(() => ({
   display: "none",
   position: "absolute",
   transform: "translate(-50%, 0%)",
-})); // ==========================================================
+}));// ==========================================================
 
 // ==========================================================
 const Navbar = ({ navListOpen, hideCategories, elevation, border }) => {
   const { settings } = useSettings();
 
   const renderNestedNav = (list = [], isRoot = false) => {
-    return list.map((nav) => {
-      if (isRoot) {
-        // show megamenu
-        if (nav.megaMenu) {
-          //@ts-ignore
-          return (
-            <MegaMenu key={nav.title} title={nav.title} menuList={nav.child} />
-          );
-        } // show megamenu with sub
-
-        if (nav.megaMenuWithSub) {
-          //@ts-ignore
-          return (
-            <MegaMenu2 key={nav.title} title={nav.title} menuList={nav.child} />
-          );
-        }
-
-        if (nav.url) {
-          return (
-            <StyledNavLink href={nav.url} key={nav.title}>
-              {nav.title}
-            </StyledNavLink>
-          );
-        }
-
-        if (nav.child) {
-          return (
-            <FlexBox
-              key={nav.title}
-              alignItems="center"
-              position="relative"
-              flexDirection="column"
-              sx={{
-                "&:hover": {
-                  "& > .child-nav-item": {
-                    display: "block",
-                  },
-                },
-              }}
-            >
-              <FlexBox alignItems="flex-end" gap={0.3} sx={navLinkStyle}>
-                {nav.title}{" "}
-                <KeyboardArrowDown
-                  sx={{
-                    color: "grey.500",
-                    fontSize: "1.1rem",
-                  }}
-                />
-              </FlexBox>
-
-              <ChildNavsWrapper className="child-nav-item">
-                <BazaarCard
-                  elevation={3}
-                  sx={{
-                    mt: 2.5,
-                    py: 1,
-                    minWidth: 200,
-                  }}
-                >
-                  {renderNestedNav(nav.child)}
-                </BazaarCard>
-              </ChildNavsWrapper>
-            </FlexBox>
-          );
-        }
-      } else {
-        if (nav.url) {
-          return (
-            <NavLink href={nav.url} key={nav.title}>
-              <MenuItem>{nav.title}</MenuItem>
-            </NavLink>
-          );
-        }
-
-        if (nav.child) {
-          return (
-            <ParentNav position="relative" minWidth="230px" key={nav.title}>
-              <MenuItem color="grey.700">
-                <Box flex="1 1 0" component="span">
-                  {nav.title}
-                </Box>
-
-                {settings.direction === "ltr" ? (
-                  <ArrowRight fontSize="small" />
-                ) : (
-                  <ArrowLeft fontSize="small" />
-                )}
-              </MenuItem>
-
-              <ParentNavItem className="parent-nav-item">
-                <BazaarCard
-                  sx={{
-                    py: "0.5rem",
-                    minWidth: "230px",
-                  }}
-                  elevation={3}
-                >
-                  {renderNestedNav(nav.child)}
-                </BazaarCard>
-              </ParentNavItem>
-            </ParentNav>
-          );
-        }
-      }
-    });
+    return (
+        // <Box>
+        //   <StyledButton>Shop Now</StyledButton>
+        // </Box>
+        <StyledNavLink href={'https://arazaq917.github.io/lamp-editor/'} >
+          Create Your Own Lamp
+        </StyledNavLink>
+    )
   };
 
   return (
