@@ -1,0 +1,3 @@
+.mui_cart_image img{
+    object-fit : contain !important;
+}

@@ -5,6 +5,7 @@ import Head from "next/head";
 import Router from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
+import '../src/components/miniCart.css'
 import { Fragment, useEffect } from "react";
 import "simplebar/dist/simplebar.min.css";
 import MuiTheme from "theme/MuiTheme";

@@ -105,7 +105,7 @@ const ProductIntro = ({ product,datal }) => {
                   selectedImage === ind ? "primary.main" : "grey.400"
                 }
               >
-                <BazaarAvatar src={`${domainUrl}${url.AttachmentURL}`} variant="square" height={40} />
+                <BazaarAvatar className={"mui_cart_image"} src={`${domainUrl}${url.AttachmentURL}`} variant="square" height={40} />
               </FlexRowCenter>
             ))}
           </FlexBox>
